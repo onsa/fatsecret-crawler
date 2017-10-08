@@ -1,0 +1,23 @@
+{
+    "name": "onsa/fatsecret-crawler",
+    "description": "FatSecretCrawler crawls fatsecret.co.uk and returns ingredients with density (if calculable) and with multiple measurements (if available) in standard UK units.",
+    "license": "MIT",
+    "keywords": ["FatSecret", "crawler"],
+    "authors": [
+        {
+            "name": "onsa"
+        }
+    ],
+    "require": {
+				"fabpot/goutte": "^3.2-dev"
+		},
+    "require-dev": {
+        "phpunit/phpunit": "^6.3.0",
+				"onsa/reflective-test-case": "1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "onsa\\FatSecretCrawler\\": "src"
+        }
+    }
+}
