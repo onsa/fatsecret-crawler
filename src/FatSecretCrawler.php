@@ -117,10 +117,12 @@ class FatSecretCrawler
 	 */
 	private function standardise(float $calorie, Measurement $measurementObject)
 	{
-		if (!isset($this->standardisation[$measurementObject->unit])) {
-			$standardCoefficient = $this->standardisation[substr($measurementObject->unit, 0, strlen($measurementObject->unit) - 1)];
-		} else {
+		$standardCoefficient = 1;
+		$trimmedUnit = substr($measurementObject->unit, 0, strlen($measurementObject->unit) - 1);
+		if (!!isset($this->standardisation[$measurementObject->unit])) {
 			$standardCoefficient = $this->standardisation[$measurementObject->unit];
+		} elseif(!!isset($this->standardisation[$trimmedUnit])) {
+			$standardCoefficient = $this->standardisation[$trimmedUnit];
 		}
 		return round(($calorie / $measurementObject->amount) / $standardCoefficient, 4);
 	}

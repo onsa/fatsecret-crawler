@@ -388,7 +388,6 @@ class FatSecretCrawlerTest extends TestCase
 		$this->assertObjectHasAttribute('brand', $recordObject);
 		$this->assertObjectHasAttribute('measurements', $recordObject);
 		$this->assertInternalType('array', $recordObject->measurements);
-		$this->assertEquals(3, count($recordObject->measurements));
 	}
 
 	/**
